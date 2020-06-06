@@ -9,7 +9,9 @@ const home = require('./modules/home')
 const sort = require('./modules/sort')
 const users = require('./modules/users')
 const { authenticator } = require('../middleware/auth') 
+const auth = require('./modules/auth')
 
+router.use('/auth', auth)
 
 router.use('/todos',authenticator , todos)
 
@@ -20,6 +22,7 @@ router.use('/sort',authenticator , sort)
 router.use('/users', users)
 
 router.use('/',authenticator, home)
+
 
 // 匯出路由器
 module.exports = router

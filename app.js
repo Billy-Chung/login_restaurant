@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const port = 3000
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 // 載入 method-override
@@ -10,11 +9,15 @@ const session = require('express-session')
 // 引用路由器
 const routes = require('./routes')
 const usePassport = require('./config/passport')
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+const PORT = process.env.PORT
 //設定連線
 require('./config/mongoose')
 
 app.use(session({
-  secret: 'ThisIsMySecret',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }))
@@ -27,6 +30,7 @@ app.set('view engine', 'hbs')
 
 app.use(express.static('public'), bodyParser.urlencoded({ extended: true }), methodOverride('_method'))
 app.use(flash())
+
 app.use((req, res, next) => {
   // 你可以在這裡 console.log(req.user) 等資訊來觀察
   res.locals.isAuthenticated = req.isAuthenticated()
@@ -43,7 +47,7 @@ app.use(routes)
 
 
 //設置伺服器的監聽器
-app.listen(port, () => {
-  console.log(`Express is listening on localhost:${port}`)
+app.listen(PORT, () => {
+  console.log('App is running on http://localhost:3000')
 })
 
