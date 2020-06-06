@@ -40,15 +40,7 @@ router.get('/:id/edit', (req, res) => {
 //修改並將編輯的內容放進伺服器內
 router.put('/:id', (req, res) => {
     const id = req.params.id
-    const name = req.body.name
-    const nameEn = req.body.name_en
-    const category = req.body.category
-    const image = req.body.image
-    const location = req.body.location
-    const phone = req.body.phone
-    const googleMap = req.body.google_map
-    const rating = req.body.rating
-    const description = req.body.description
+    const { name, nameEn, category, image, location, phone, googleMap, rating, description } = req.body
     return Todo.findById(id)
         //如果查詢成功，幫我儲存資料
         .then((restaurant) => {
