@@ -13,8 +13,8 @@ require('./config/mongoose')
 const routes = require('./routes')
 
 //設定引擎和路由
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
-app.set('view engine', 'handlebars')
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.set('view engine', 'hbs')
 app.use(express.static('public'), bodyParser.urlencoded({ extended: true }), methodOverride('_method'), routes)
 
 //設置伺服器的監聽器

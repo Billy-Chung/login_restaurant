@@ -12,4 +12,12 @@ router.get('/:name/:type', (req, res) => {
     .catch(error => console.log(error))
 })
 
+router.get('/:name/:type/:id', (req, res) => {
+  const id = req.params.id
+  return Todo.findById(id)
+      .lean()
+      .then((todo) => res.render('detail', { todo }))
+      .catch(error => console.log(error))
+})
+
 module.exports = router
