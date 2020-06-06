@@ -12,7 +12,13 @@ const todoSchema = new Schema({
     phone: String,
     google_map: String,
     rating: String,
-    description: String
+    description: String,
+    userId: {  // 加入關聯設定
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        index: true,
+        required: true
+      }
 })
 
 module.exports = mongoose.model('Todo', todoSchema)
