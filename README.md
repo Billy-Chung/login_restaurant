@@ -2,9 +2,11 @@
 開啟舌尖上的旅行😊
 
 * 一個頁面可以增刪查改的頁面，用來學習運用mongoose操作mongoDB的基礎知識。 
+* 第一個頁面可以登入或註冊帳號，也可以使用FB登入。
 
 # Features - 特色功能
 
+* 使用者需要登入才能操作下列功能
 * 使用者能瀏覽全部餐廳資訊
 * 使用者能新增一筆餐廳資訊
 * 使用者能刪除一筆餐廳資訊
@@ -21,7 +23,7 @@
 
 # Installing - 安裝流程
 * Open the terminal and clone our project
-* git clone  https://github.com/Billy-Chung/restaurant_list-3.0.git
+* git clone  https://github.com/Billy-Chung/login_restaurant.git
 * FoodAdvisor_CURD.git
 * Access the directory
 * cd FoodAdvisor_CURD
