@@ -23,7 +23,7 @@
                   <a class="dropdown-item" href="/sort/category/asc">類別</a>
                   <a class="dropdown-item" href="/sort/location/asc">地區</a>
                 </div>
-                <a class="dropdown" href="./todos/new">Create</a>
+                <a class="btn btn-secondary"  href="./todos/new">Create</a>
               </div>
             </div>
           </div>
@@ -54,10 +54,10 @@
               </span>
 
             </div>
-            <a href="./todos/{{ this._id }}">detail</a>
-            <a href="./todos/{{ this._id }}/edit">edit</a>
+            <a href="./todos/{{ this._id }}" class="btn btn-secondary mb-4">detail</a>
+            <a href="./todos/{{ this._id }}/edit" class="btn btn-secondary mb-4">edit</a>
             <form action="./todos/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
-              <button type="submit">delete</button>
+              <button  class="btn btn-secondary mb-4" type="submit">delete</button>
             </form>
           </div>
         </a>
