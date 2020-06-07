@@ -14,7 +14,7 @@
             <div class="col">
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                   Sort
                 </button>
                 <div class="dropdown-menu">
@@ -40,24 +40,24 @@
         {{#each todos}}
         <a href="./todos/{{this._id}}" class="text-secondary">
           <div class="card mb-3">
-            <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+            <img class="card-img-top"  src="{{this.image}}" alt="{{this.name}}">
             <div class="card-body p-3">
-              <h6 class="card-title mb-1">{{this.name}}</h6>
+              <h6 class="card-title mb-1"  style="color:orange" >{{this.name}}</h6>
 
-              <div class="restaurant-category mb-1">
-                <i class="fas fa-utensils pr-2"></i> {{this.category}}
+              <div class="restaurant-category mb-1" >
+                <i class="fas fa-utensils pr-2"  style="color:orange" >{{this.category}}</i> 
               </div>
 
-              <span class="badge badge-pill badge-danger font-weight-normal">
+              <span class="badge badge-pill badge-danger font-weight-normal" >
                 {{this.rating}}
                 <i class="fas fa-star fa-xs"></i>
               </span>
 
             </div>
-            <a href="./todos/{{ this._id }}" class="btn btn-secondary mb-4">detail</a>
-            <a href="./todos/{{ this._id }}/edit" class="btn btn-secondary mb-4">edit</a>
+            <a href="./todos/{{ this._id }}" class="btn btn-secondary mb-4" style="color:#FF1C1C">detail</a>
+            <a href="./todos/{{ this._id }}/edit" class="btn btn-secondary mb-4" style="color:#FF1C1C">edit</a>
             <form action="./todos/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
-              <button  class="btn btn-secondary mb-4" type="submit">delete</button>
+              <button  class="btn btn-secondary mb-4" type="submit" style="color:#FF1C1C">delete</button>
             </form>
           </div>
         </a>
