@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
     if (!req.body.image.length) {
         req.body.image = 'https://static.vecteezy.com/system/resources/previews/000/091/119/large_2x/free-restaurant-logo-on-paper-plate-vector.jpg'
     }    
-   console.log(restaurant)
+
     return Todo.create({...restaurant, userId})
     
         .then(() => {
