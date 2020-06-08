@@ -1,20 +1,20 @@
 const express = require('express')
 const router = express.Router()
-const Todo = require('../../models/todo')
+const Restaurant = require('../../models/restaurant')
 
 //搜尋功能的路由
 router.get('/', (req, res) => {
     const keyword = req.query.keyword
-    return Todo.find()
+    return Restaurant.find()
       .lean()
-      .then(todos => {
-        const results = todos.filter(
+      .then(restaurants => {
+        const results = restaurants.filter(
           item =>
             item.name.toLowerCase().includes(keyword.toLowerCase()) ||
             item.category.toLowerCase().includes(keyword.toLowerCase())
         )
         if (results.length > 0) {
-          res.render('index', { todos: results, keyword: keyword })
+          res.render('index', { restaurants: results, keyword: keyword })
         } else {
           res.render('index', { keyword: keyword })
         }

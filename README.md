@@ -24,9 +24,6 @@
 # Installing - 安裝流程
 * Open the terminal and clone our project
 * git clone  https://github.com/Billy-Chung/login_restaurant.git
-* FoodAdvisor_CURD.git
-* Access the directory
-* cd FoodAdvisor_CURD
 * Intall npm
 * npm install 
 * Requrie seed

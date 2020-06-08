@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const User = require('../user')
 const db = require('../../config/mongoose')
-const Todo = require('../../models/todo')
+const Restaurant = require('../restaurant')
 
 const First_USER = {
   name: 'user1',
@@ -30,7 +30,7 @@ db.once('open', () => {
       const userId = user._id
       return Promise.all(Array.from(
         { length: 1 },
-        (_) => Todo.create(
+        (_) => Restaurant.create(
           {
             "id": 1,
             "name": "Sababa 沙巴巴中東美食",
@@ -86,7 +86,7 @@ db.once('open', () => {
           const userId = user._id
           return Promise.all(Array.from(
             { length: 1 },
-            (_) => Todo.create(
+            (_) => Restaurant.create(
               {
                 "id": 4,
                 "name": "艾朋牛排餐酒館",

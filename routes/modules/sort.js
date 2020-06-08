@@ -1,22 +1,22 @@
 const express = require('express')
 const router = express.Router()
-const Todo = require('../../models/todo')
+const Restaurant = require('../../models/restaurant')
 
 //Sort function
 router.get('/:name/:type', (req, res) => {
   const { name, type } = req.params
-  return Todo.find()
+  return Restaurant.find()
     .sort({ [name]: [type] })
     .lean()
-    .then(todos => res.render('index', { todos }))
+    .then(restaurants => res.render('index', { restaurants }))
     .catch(error => console.log(error))
 })
 
 router.get('/:name/:type/:id', (req, res) => {
   const id = req.params.id
-  return Todo.findById(id)
+  return Restaurant.findById(id)
       .lean()
-      .then((todo) => res.render('detail', { todo }))
+      .then((restaurant) => res.render('detail', { restaurant }))
       .catch(error => console.log(error))
 })
 

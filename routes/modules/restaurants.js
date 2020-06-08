@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Todo = require('../../models/todo')
+const Restaurant = require('../../models/restaurant')
 
 //新增餐廳
 router.get('/new', (req, res) => {    
@@ -18,7 +18,7 @@ router.post('/', (req, res) => {
         req.body.image = 'https://static.vecteezy.com/system/resources/previews/000/091/119/large_2x/free-restaurant-logo-on-paper-plate-vector.jpg'
     }    
 
-    return Todo.create({...restaurant, userId})
+    return Restaurant.create({...restaurant, userId})
     
         .then(() => {
             console.log(res)
@@ -31,9 +31,9 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res) => {
     const userId = req.user._id
     const _id = req.params.id
-    return Todo.findOne({_id, userId})
+    return Restaurant.findOne({_id, userId})
         .lean()
-        .then((todo) => res.render('detail', { todo }))
+        .then((restaurant) => res.render('detail', { restaurant }))
         .catch(error => console.log(error))
 })
 
@@ -41,9 +41,9 @@ router.get('/:id', (req, res) => {
 router.get('/:id/edit', (req, res) => {
     const userId = req.user._id
     const _id = req.params.id
-    return Todo.findOne({_id, userId})
+    return Restaurant.findOne({_id, userId})
         .lean()
-        .then((todo) => res.render('edit', { todo }))
+        .then((restaurant) => res.render('edit', { restaurant }))
         .catch(error => console.log(error))
 })
 
@@ -52,7 +52,7 @@ router.put('/:id', (req, res) => {
     const userId = req.user._id
     const _id = req.params.id
     const { name, nameEn, category, image, location, phone, googleMap, rating, description } = req.body
-    return Todo.findOne({_id, userId})
+    return Restaurant.findOne({_id, userId})
         //如果查詢成功，幫我儲存資料
         .then((restaurant) => {
             restaurant.name = name
@@ -67,7 +67,7 @@ router.put('/:id', (req, res) => {
             return restaurant.save()
         })
         //如果儲存成功，重新導向那筆的詳細頁面
-        .then(() => res.redirect(`/todos/${_id}`))
+        .then(() => res.redirect(`/restaurants/${_id}`))
         .catch((error) => console.log(error))
 })
 
@@ -75,8 +75,8 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     const userId = req.user._id
     const _id = req.params.id
-    return Todo.findOne({_id, userId})
-        .then(todo => todo.remove())
+    return Restaurant.findOne({_id, userId})
+        .then(restaurant => restaurant.remove())
         .then(() => res.redirect('/'))
         .catch(error => console.log(error))
 })

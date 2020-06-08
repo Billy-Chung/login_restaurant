@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 
 // 引入模組程式碼
-const todos = require('./modules/todos')
+const restaurants = require('./modules/restaurants')
 const search = require('./modules/search')
 const home = require('./modules/home')
 const sort = require('./modules/sort')
@@ -13,7 +13,7 @@ const auth = require('./modules/auth')
 
 router.use('/auth', auth)
 
-router.use('/todos',authenticator , todos)
+router.use('/restaurants',authenticator , restaurants)
 
 router.use('/search',authenticator , search)
 

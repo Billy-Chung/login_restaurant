@@ -1,4 +1,4 @@
-<form action="/todos/{{todo._id}}?_method=PUT" method="POST" id="create">
+<form action="/restaurants/{{restaurant._id}}?_method=PUT" method="POST" id="create">
   <div class="container mt-3 mb-4">
     <div class="row">
 
@@ -10,7 +10,7 @@
             餐廳名稱：
           </span>
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="餐廳名稱" name="name" value="{{todo.name}}">
+          <input type="text" class="form-control" placeholder="餐廳名稱" name="name" value="{{restaurant.name}}">
         </div>
         </p>
 
@@ -21,7 +21,7 @@
           </span>
         <div class="input-group">
           <input type="text" class="form-control" placeholder="English name" name="name_en"
-            value="{{todo.name_en}}">
+            value="{{restaurant.name_en}}">
         </div>
         </p>
 
@@ -33,7 +33,7 @@
         <div class="input-group">
 
           <select id="category" class="form-control" name="category" >
-            <option>{{todo.category}}</option>
+            <option>{{restaurant.category}}</option>
             <option>美式餐廳</option>
             <option>日式餐廳</option>
             <option>義式餐廳</option>
@@ -50,7 +50,7 @@
             地址：
           </span>
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="餐廳地址" name="location" value="{{todo.location}}">
+          <input type="text" class="form-control" placeholder="餐廳地址" name="location" value="{{restaurant.location}}">
         </div>
         </p>
 
@@ -60,7 +60,7 @@
             電話：
           </span>
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="02 2828 1234" name="phone" value="{{todo.phone}}">
+          <input type="text" class="form-control" placeholder="02 2828 1234" name="phone" value="{{restaurant.phone}}">
         </div>
         </p>
 
@@ -71,7 +71,7 @@
           </span>
         <div class="input-group">
           <input type="number" class="form-control" placeholder="0到5分" name="rating" placeholder="0~5" step="0.1"
-            min="0" max="5" value="{{todo.rating}}">
+            min="0" max="5" value="{{restaurant.rating}}">
         </div>
         </p>
 
@@ -82,7 +82,7 @@
           </span>
         <div class="input-group">
           <textarea class="form-control" placeholder="介紹您的餐廳" name="description"
-            style="height: 5em;">{{todo.description}}</textarea>
+            style="height: 5em;">{{restaurant.description}}</textarea>
         </div>
         </p>
 
@@ -92,7 +92,7 @@
             照片：
           </span>
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="http://" name="image" value="{{todo.image}}">
+          <input type="text" class="form-control" placeholder="http://" name="image" value="{{restaurant.image}}">
         </div>
         </p>
 
@@ -103,7 +103,7 @@
           </span>
         <div class="input-group">
           <input type="text" class="form-control" placeholder="http://" name="google_map"
-            value="{{todo.google_map}}">
+            value="{{restaurant.google_map}}">
         </div>
         </p>
 
